@@ -25,7 +25,7 @@ def gencode(gendcode_year,gencode_month,gencode_sum_day, gencode_start_day_of_mo
             day_string = str(day)
         if int(day) < int(sum_day) + 1:
             year_month_day = str(gendcode_year) + month_string + day_string
-            print(year_month_day)
+            #print(year_month_day)
             file = open("./command.sh", "a+")
             data = "curl --location --request POST 'http://localhost:4200/app/info_sky_v2/blocking/job/log_bhxh_end_record' --header 'Content-Type: application/json'" + " --data " + str("'{") +str('"day":"') + year_month_day.rstrip() +str('"}') + "'" + "\n"
             file.writelines(data)
